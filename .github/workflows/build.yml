@@ -11,6 +11,13 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
+      - name: Baixar Dependencias
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path libs/BepInEx/core, libs/BepInEx/interop
+          Invoke-WebRequest -Uri "https://github.com" -OutFile "libs/Reactor.dll"
+          Invoke-WebRequest -Uri "https://bepinex.dev" -OutFile "bepinex.zip"
+          Expand-Archive -Path "bepinex.zip" -DestinationPath "libs" -Force
       - name: Compilar FamilyRoles
         run: dotnet build -c Release
       - name: Disponibilizar DLL para Download
