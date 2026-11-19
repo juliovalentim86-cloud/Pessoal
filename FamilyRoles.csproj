@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Reactor" Version="2.5.1" />
-    <PackageReference Include="AmongUs.GameLibs.Steam" Version="2025.5.20" PrivateAssets="all" />
+    <PackageReference Include="Reactor" Version="2.3.1" />
+    <PackageReference Include="AmongUs.GameLibs.Steam" Version="2024.9.4" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.733" PrivateAssets="all" />
   </ItemGroup>
 
