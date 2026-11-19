@@ -1,0 +1,20 @@
+name: Compilar Mod
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+      - name: Compilar FamilyRoles
+        run: dotnet build -c Release
+      - name: Disponibilizar DLL para Download
+        uses: actions/upload-artifact@v4
+        with:
+          name: FamilyRoles-Mod
+          path: bin/Release/net6.0/FamilyRoles.dll
