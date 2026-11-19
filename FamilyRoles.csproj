@@ -4,11 +4,17 @@
     <LangVersion>latest</LangVersion>
     <Version>1.0.0</Version>
     <Authors>Familia</Authors>
+    <RestoreAdditionalProjectSources>
+      https://nuget.org;
+      https://bepinex.dev;
+      https://reactor.gg
+    </RestoreAdditionalProjectSources>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="libs\BepInEx\core\*.dll" Private="false" />
-    <Reference Include="libs\BepInEx\interop\*.dll" Private="false" />
-    <Reference Include="libs\Reactor.dll" Private="false" />
+    <PackageReference Include="Reactor" Version="2.5.1" />
+    <PackageReference Include="AmongUs.GameLibs.Steam" Version="2024.9.4" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.733" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.IL2CPP.MSBuild" Version="2.1.0-rc.1" PrivateAssets="all" />
   </ItemGroup>
 </Project>
