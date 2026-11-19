@@ -11,8 +11,10 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
+      - name: Restaurar Pacotes
+        run: dotnet restore --source https://nuget.org --source https://bepinex.dev --source https://reactor.gg
       - name: Compilar FamilyRoles
-        run: dotnet build -c Release
+        run: dotnet build -c Release --no-restore
       - name: Disponibilizar DLL para Download
         uses: actions/upload-artifact@v4
         with:
